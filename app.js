@@ -73,7 +73,4 @@ app.get("*", function (req, res) {
 
 app.listen(port, () => {
   console.log(`Listning to port ${port}`);
-  // const crypto = require("crypto");
-  // const sessionSecret = crypto.randomBytes(64).toString("hex");
-  // console.log(sessionSecret);
 });
