@@ -1,29 +1,60 @@
 <div class="container-fluid">
-  <header
-    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4"
-  >
-    <a
-      href="/dashboard"
-      class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-primary text-decoration-none fw-bold fs-2"
-    >
-      Notes App
-    </a>
+  <header class="mt-3 mx-4">
+    <nav class="navbar rounded navbar-expand-lg bg-body-tertiary py-3 mb-4">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-3" href="/dashboard">NOTES</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/dashboard"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/cal">Calendar</a>
+            </li>
+          </ul>
 
-    <!-- This form has the 'action' and POST 'method' for the searching functionality -->
-    <form
-      class="nav col-12 col-md-auto flex-fill mb-2 justify-content-center mb-md-0"
-      role="search"
-      method="POST"
-      action="/dashboard/search"
-    >
-    <!-- name prop is used to ask for data  -->
-      <input type="search" name="searchTerm" class="form-control border-primary" placeholder="search..." aria-label="Search" ></input>
-    </form>
+          <!-- This form has the 'action' and POST 'method' for the searching functionality -->
+          <form
+            class="d-flex me-5"
+            role="search"
+            method="POST"
+            action="/dashboard/search"
+          >
+            <!-- name prop is used to ask for data  -->
+            <input
+              class="form-control me-5"
+              type="search"
+              name="searchTerm"
+              placeholder="Search"
+              aria-label="Search"
+              required
+            />
+            <button class="btn btn-outline-success me-5" type="submit">
+              Search
+            </button>
+          </form>
+          <a class="nav-link me-5" href="/dashboard/add"
+            ><i class="bi bi-pencil-square" style="font-size: 40px"></i
+          ></a>
 
-    <div class="col-md-3 text-end">
-      <a href="/logout" type="button" class="btn btn-outline-primary"
-        >Logout</a
-      >
-    </div>
+          <a class="nav-link me-5" href="/logout"
+            ><i class="bi bi-box-arrow-right" style="font-size: 40px"></i
+          ></a>
+        </div>
+      </div>
+    </nav>
   </header>
 </div>

@@ -19,11 +19,14 @@ exports.homepage = async (req, res) => {
  * About
  */
 
-exports.about = async (req, res) => {
+exports.cal = async (req, res) => {
   const locals = {
-    title: "About NoteCalandar",
-    description: "Auth.2 Calandar Note App",
+    title: "About Calandar",
+    description: "Calandar App",
   };
 
-  res.render("about", locals);
+  res.render("calendar", {
+    locals,
+    layout: "../views/layouts/calOutput",
+  });
 };
