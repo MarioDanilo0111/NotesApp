@@ -32,6 +32,13 @@ app.use(
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+/* static file Images */
+const path = require("path");
+app.use("/static", express.static(path.join(__dirname, "public")));
+
+/* static file for JS */
+app.use("*/js", express.static(path.join(__dirname + "/server/js/")));
+
 /* using the PUT & PAT method, override */
 app.use(methodOverride("_method"));
 
@@ -56,7 +63,7 @@ app.use("/", require("./server/routes/auth"));
 /* index */
 app.use("/", require("./server/routes/index"));
 
-/* dashBoard    */
+/* dashBoard */
 app.use("/", require("./server/routes/dashboard"));
 
 /* Handle the 404 page(this need's to be the last Route) */
@@ -66,4 +73,7 @@ app.get("*", function (req, res) {
 
 app.listen(port, () => {
   console.log(`Listning to port ${port}`);
+  // const crypto = require("crypto");
+  // const sessionSecret = crypto.randomBytes(64).toString("hex");
+  // console.log(sessionSecret);
 });

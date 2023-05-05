@@ -5,6 +5,6 @@ const mainController = require("../controllers/mainController");
 /* App Router */
 
 router.get("/", mainController.homepage);
-router.get("/about", mainController.about);
+router.get("/cal", mainController.cal);
 
 module.exports = router;
