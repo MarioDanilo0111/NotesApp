@@ -11,7 +11,7 @@ passport.use(
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       callbackURL: process.env.GOOGLE_CALLBACK_URL,
     },
-    /* Need to verify user with "cb" to complete authenttication */
+    /* Need to verify user with "cb"(callback) to complete authenttication */
     async function (accessToken, refreshToken, profile, done) {
       const newUser = {
         googleId: profile.id,
@@ -42,7 +42,7 @@ router.get(
   "/auth/google",
   passport.authenticate("google", { scope: ["email", "profile"] })
 );
-/* Retrive user data */
+/* Get user data */
 router.get(
   "/google/callback",
   passport.authenticate("google", {
@@ -74,7 +74,7 @@ passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
 
-/* Retrieve or access the user data from session */
+/* Retrieve or get the user data from session */
 passport.deserializeUser(async (id, done) => {
   try {
     const user = await User.findById(id);
