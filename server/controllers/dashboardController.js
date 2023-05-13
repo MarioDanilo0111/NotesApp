@@ -89,6 +89,7 @@ exports.dashboardUpdateNote = async (req, res) => {
       { _id: req.params.id },
       { title: req.body.title, body: req.body.body, updatedAt: Date.now() }
     ).where({ user: req.user.id });
+    //res.redirect("/deshboard");
     res.redirect("/deshboard");
   } catch (error) {
     console.log(error);

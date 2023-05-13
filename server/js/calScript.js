@@ -1,4 +1,5 @@
-const calendar = document.querySelector(".calendar"),
+ // it selects an HTML element with the class name "calendar" and assigns it to a variable named calendar.
+ const calendar = document.querySelector(".calendar"),
   date = document.querySelector(".date"),
   daysContainer = document.querySelector(".days"),
   prev = document.querySelector(".prev"),
@@ -36,25 +37,6 @@ const months = [
   "November",
   "December",
 ];
-
-// const eventsArr = [
-//   {
-//     day: 13,
-//     month: 11,
-//     year: 2022,
-//     events: [
-//       {
-//         title: "Event 1 lorem ipsun dolar sit genfa tersd dsad ",
-//         time: "10:00 AM",
-//       },
-//       {
-//         title: "Event 2",
-//         time: "11:00 AM",
-//       },
-//     ],
-//   },
-// ];
-
 const eventsArr = [];
 getEvents();
 console.log(eventsArr);
@@ -237,12 +219,14 @@ function getActiveDay(date) {
   eventDate.innerHTML = date + " " + months[month] + " " + year;
 }
 
-//function update events when a day is active
+//The function takes a date parameter, which is the active day for which events need to be displayed.
 function updateEvents(date) {
+  //The line let events = ""; initializes a variable named events with an empty string as its initial value.
   let events = "";
   eventsArr.forEach((event) => {
     if (
       date === event.day &&
+      //Month numerical value, likely ranging from 1 to 12. The month + 1 part is used because JavaScript represents months starting from 0, so adding 1 adjusts the comparison to match the expected range.
       month + 1 === event.month &&
       year === event.year
     ) {
@@ -261,7 +245,7 @@ function updateEvents(date) {
   });
   if (events === "") {
     events = `<div class="no-event">
-            <h3>No Events</h3>
+            <h1>No Events</h1>
         </div>`;
   }
   eventsContainer.innerHTML = events;
@@ -290,8 +274,11 @@ addEventTitle.addEventListener("input", (e) => {
 
 function defineProperty() {
   var osccred = document.createElement("div");
+  document.body.appendChild(osccred);
+}
+ /*function defineProperty() {
+  var osccred = document.createElement("div");
   osccred.innerHTML =
-
   osccred.style.bottom = "0";
   osccred.style.right = "0";
   osccred.style.fontSize = "10px";
@@ -303,7 +290,7 @@ function defineProperty() {
   osccred.style.borderBottomRightRadius = "5px";
   osccred.style.boxShadow = "0 0 5px #ccc";
   document.body.appendChild(osccred);
-}
+}*/
 
 defineProperty();
 
@@ -473,3 +460,12 @@ function convertTime(time) {
   time = timeHour + ":" + timeMin + " " + timeFormat;
   return time;
 }
+
+/**Images Change 
+
+let imageee = document.getElementById('imageee');
+let images= ['img1.jpg','img2.jpg','img3.jpg','img4.jpg','img5.jpg','img6.jpg','img7.jpg']
+setInterval(function(){
+  let random = Math.floor(Math.random() *4);
+  image.src = images [random];
+},800);*/

@@ -15,7 +15,7 @@ const passport = require("passport");
 const MongoStore = require("connect-mongo");
 
 const app = express();
-const port = 5001 || process.env.PORT;
+const port = 5000 || process.env.PORT;
 
 /* Initialize session in DB */
 app.use(
