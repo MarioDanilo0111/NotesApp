@@ -523,7 +523,7 @@ opacity: 0.9;  /*  Element will be 50% transparent */
     height: 100%;
     padding: 20px 0;
   }
-  .calendar::before,
+
   .calendar::after {
     top: 100%;
     left: 50%;
@@ -532,10 +532,7 @@ opacity: 0.9;  /*  Element will be 50% transparent */
     border-radius: 0 0 5px 5px;
     transform: translateX(-50%);
   }
-  .calendar::before {
-    width: 94%;
-    top: calc(100% + 12px);
-  }
+
   .events {
     padding-bottom: 340px;
   }

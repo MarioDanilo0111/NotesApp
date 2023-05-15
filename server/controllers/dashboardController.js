@@ -28,8 +28,8 @@ exports.dashboard = async (req, res) => {
       },
       {
         $project: {
-          title: { $substr: ["$title", 0, 30] },
-          body: { $substr: ["$body", 0, 100] },
+          title: { $substr: ["$title", 0, 20] },
+          body: { $substr: ["$body", 0, 50] },
         },
       },
     ])
