@@ -39,7 +39,7 @@ app.use("/static", express.static(path.join(__dirname, "public")));
 /* static file for JS */
 app.use("*/js", express.static(path.join(__dirname + "/server/js/")));
 
-/* using the PUT & PAT method, override */
+/* using the PUT & DELETE method, override */
 app.use(methodOverride("_method"));
 
 /* start to connect the DB */

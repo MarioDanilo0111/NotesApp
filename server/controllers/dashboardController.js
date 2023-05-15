@@ -28,8 +28,8 @@ exports.dashboard = async (req, res) => {
       },
       {
         $project: {
-          title: { $substr: ["$title", 0, 30] },
-          body: { $substr: ["$body", 0, 100] },
+          title: { $substr: ["$title", 0, 15] },
+          body: { $substr: ["$body", 0, 50] },
         },
       },
     ])
@@ -87,9 +87,12 @@ exports.dashboardUpdateNote = async (req, res) => {
   try {
     await Note.findOneAndUpdate(
       { _id: req.params.id },
-      { title: req.body.title, body: req.body.body, updatedAt: Date.now() }
+      { title: req.body.title, body: req.body.body, updatedAt: new Date() }
     ).where({ user: req.user.id });
-    res.redirect("/deshboard");
+    console.log(new Date());
+
+    // res.redirect("/deshboard");
+    res.redirect("/dashboard");
   } catch (error) {
     console.log(error);
   }
