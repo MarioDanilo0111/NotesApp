@@ -180,3 +180,15 @@ exports.dashboardSearchSubmit = async (req, res) => {
     console.log(error);
   }
 };
+
+exports.cal = async (req, res) => {
+  const locals = {
+    title: "Calandar",
+    description: "Calandar App",
+  };
+
+  res.render("calendar", {
+    locals,
+    layout: "../views/layouts/calOutput",
+  });
+};

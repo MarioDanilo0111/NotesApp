@@ -8,6 +8,7 @@ const dashboardController = require("../controllers/dashboardController");
  */
 
 router.get("/dashboard", isLoggedIn, dashboardController.dashboard);
+router.get("/dashboard");
 
 /**
  * Dasboard Routes and type of request, "get"
@@ -71,5 +72,11 @@ router.post(
   isLoggedIn,
   dashboardController.dashboardSearchSubmit
 );
+
+/**
+ * Dashboard Routes and type of request, "POST"
+ * Updating the funded note
+ */
+router.get("/cal", isLoggedIn, dashboardController.cal);
 
 module.exports = router;

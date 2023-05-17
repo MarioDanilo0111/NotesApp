@@ -19,14 +19,14 @@ exports.homepage = async (req, res) => {
  * About
  */
 
-exports.cal = async (req, res) => {
-  const locals = {
-    title: "Calandar",
-    description: "Calandar App",
-  };
+// exports.cal = async (req, res) => {
+//   const locals = {
+//     title: "Calandar",
+//     description: "Calandar App",
+//   };
 
-  res.render("calendar", {
-    locals,
-    layout: "../views/layouts/calOutput",
-  });
-};
+//   res.render("calendar", {
+//     locals,
+//     layout: "../views/layouts/calOutput",
+//   });
+// };
