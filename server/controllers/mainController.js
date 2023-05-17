@@ -21,7 +21,7 @@ exports.homepage = async (req, res) => {
 
 exports.cal = async (req, res) => {
   const locals = {
-    title: "About Calandar",
+    title: "Calandar",
     description: "Calandar App",
   };
 

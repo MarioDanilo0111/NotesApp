@@ -1,68 +1,85 @@
-<!-- <div class="container-fluid container-fluid-custom py-md-0 mb-5">
-  <div class="row mb-4 mx-0 mt-2 align-items-center">
-    <div class="cal-wrapper col-md-3 m-auto mt-5 ms-5 mb-3 w-50">
-      <header>
-        <p class="current-date"></p>
-        <div class="icons">
-          <span id="prev" class="material-symbols-rounded">chevron_left</span>
-          <span id="next" class="material-symbols-rounded">chevron_right</span>
+<div class="container-fluid container-fluid-custom pb-5 mb-5">
+  <div class="row">
+    <div class="body-cal">
+      <div class="container-cal">
+        <div class="left">
+          <div class="calendar">
+            <div class="month">
+              <i class="fas fa-angle-left prev"></i>
+              <div class="date"></div>
+              <i class="fas fa-angle-right next"></i>
+            </div>
+
+            <div class="weekdays">
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+              <div>Sun</div>
+            </div>
+            <div class="days"></div>
+            <div class="goto-today">
+              <div class="goto">
+                <input
+                  type="text"
+                  placeholder="search for: M/YYYY"
+                  class="date-input"
+                />
+                <button class="goto-btn">
+                  <i class="bi bi-search" style="color: black"></i>
+                </button>
+              </div>
+              <button class="today-btn">today</button>
+            </div>
+          </div>
         </div>
-      </header>
-      <div class="calendar">
-        <ul class="weeks">
-          <li>Sun</li>
-          <li>Mon</li>
-          <li>Tue</li>
-          <li>Wed</li>
-          <li>Thu</li>
-          <li>Fri</li>
-          <li>Sat</li>
-        </ul>
-        <ul class="days"></ul>
+        <div class="right">
+          <div class="today-date">
+            <div class="event-day"></div>
+            <div class="event-date"></div>
+            <div>
+              <button class="add-event">
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+          </div>
+          <div class="events"></div>
+          <div class="add-event-wrapper">
+            <div class="add-event-header">
+              <div class="title">Add an Event</div>
+              <i class="fas fa-times close"></i>
+            </div>
+            <div class="add-event-body">
+              <div class="add-event-input">
+                <input
+                  type="text"
+                  placeholder="Event title"
+                  class="event-name"
+                />
+              </div>
+              <div class="add-event-input">
+                <input
+                  type="text"
+                  placeholder="Event Start Time"
+                  class="event-time-from"
+                />
+              </div>
+              <div class="add-event-input">
+                <input
+                  type="text"
+                  placeholder="Event Finish Time"
+                  class="event-time-to"
+                />
+              </div>
+            </div>
+            <div class="add-event-footer">
+              <button class="add-event-btn">Event</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
- -->
-
-<div id="container">
-  <div id="header">
-    <div id="monthDisplay"></div>
-    <div>
-      <button id="backButton">Back</button>
-      <button id="nextButton">Next</button>
-    </div>
-  </div>
-
-  <div id="weekdays">
-    <div>Sunday</div>
-    <div>Monday</div>
-    <div>Tuesday</div>
-    <div>Wednesday</div>
-    <div>Thursday</div>
-    <div>Friday</div>
-    <div>Saturday</div>
-  </div>
-
-  <div id="calendar"></div>
-</div>
-
-<div id="newEventModal">
-  <h2>New Event</h2>
-
-  <input id="eventTitleInput" placeholder="Event Title" />
-
-  <button id="saveButton">Save</button>
-  <button id="cancelButton">Cancel</button>
-</div>
-
-<div id="deleteEventModal">
-  <h2>Event</h2>
-
-  <p id="eventText"></p>
-
-  <button id="deleteButton">Delete</button>
-  <button id="closeButton">Close</button>
-</div>
-
-<div id="modalBackDrop"></div>
