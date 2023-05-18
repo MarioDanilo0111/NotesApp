@@ -2,7 +2,9 @@ exports.isLoggedIn = function (req, res, next) {
   if (req.user) {
     next();
   } else {
-    return res.status(401).send("Access Denied");
+    return res
+      .status(401)
+      .render("partials/error", { message: "Access Denied" });
   }
 };
 

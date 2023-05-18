@@ -6,7 +6,51 @@
       <h4><%= note.title %></h4>
     </a>
     <% }) %> <% } else { %>
-    <p>Nothing Found</p>
-    <% } %>
+    <div class="row text-sm-start mt-1 mb-6">
+      <h3>Nothing Found</h3>
+      <h5>Perhaps you need to write something down</h5>
+    </div>
+    <div class="col-md-5 m-auto mt-3 mb-0" id="wrapper">
+      <form
+        action="/dashboard/add"
+        method="POST"
+        class="position-relativ"
+        id="paper"
+      >
+        <div
+          id="margin"
+          class="form-group mb-4 position-absolut"
+          style="left: -1px; top: 1px; right: 1px"
+        >
+          <input
+            class="form-control fw-bold border-0 fs-4"
+            id="title"
+            type="text"
+            name="title"
+            placeholder="Title"
+            required
+          />
+        </div>
+
+        <div class="form-group mb-4">
+          <textarea
+            id="text"
+            name="body"
+            id="body"
+            rows="11"
+            class="form-control pt-5 fs-4"
+            placeholder="write your thoughts here"
+            required
+          ></textarea>
+        </div>
+
+        <div class="form-group me-5">
+          <button type="submit" class="btn btn-primary btn-lg">
+            <i class="bi bi-database-fill-check"></i>
+          </button>
+        </div>
+      </form>
+      <% } %>
+    </div>
   </div>
 </div>
