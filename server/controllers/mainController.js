@@ -16,7 +16,7 @@ exports.homepage = async (req, res) => {
 };
 /*
  * GET /
- * About
+ * Calendar
  */
 
 // exports.cal = async (req, res) => {
