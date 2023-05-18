@@ -181,6 +181,10 @@ exports.dashboardSearchSubmit = async (req, res) => {
   }
 };
 
+/*
+ * GET /
+ * Calendar
+ */
 exports.cal = async (req, res) => {
   const locals = {
     title: "Calandar",

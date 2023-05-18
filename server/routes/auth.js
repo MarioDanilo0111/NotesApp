@@ -36,8 +36,8 @@ passport.use(
   )
 );
 
-/* route middleware in an Express application */
-/* Google login Route */
+/* route middleware in an Express application
+ * Google login Route */
 router.get(
   "/auth/google",
   passport.authenticate("google", { scope: ["email", "profile"] })
@@ -55,21 +55,26 @@ router.get("/login-failure", (req, res) => {
   res.send("Someting is not right...");
 });
 
-/* Destry user session */
-// here we can also do an other page for the logout
+/*
+ * Destry user session
+ * here we can also do an other page for the logout
+ * We use 'unuse' method to delete CASH of the strategy for more security
+ */
 router.get("/logout", (req, res) => {
   req.session.destroy((error) => {
     if (error) {
       console.log(error);
       res.send("Error loggin out");
     } else {
+      passport.unuse(GoogleStrategy.name);
       res.redirect("/");
     }
   });
 });
 
-/* Persist or in other words 'Store' user data after successful Authentication */
-/* This is used to send and use data from MongoosDB */
+/* Persist or in other words 'Store' user data after successful Authentication
+ * This is used to send and use data from MongoosDB
+ */
 passport.serializeUser(function (user, done) {
   done(null, user.id);
 });

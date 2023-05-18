@@ -8,7 +8,6 @@ const dashboardController = require("../controllers/dashboardController");
  */
 
 router.get("/dashboard", isLoggedIn, dashboardController.dashboard);
-router.get("/dashboard");
 
 /**
  * Dasboard Routes and type of request, "get"
@@ -74,8 +73,8 @@ router.post(
 );
 
 /**
- * Dashboard Routes and type of request, "POST"
- * Updating the funded note
+ * Dashboard Routes to Calendar and type of request, "GET"
+ * Now only authentified user reach this path
  */
 router.get("/cal", isLoggedIn, dashboardController.cal);
 
