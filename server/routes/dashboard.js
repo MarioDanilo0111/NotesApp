@@ -41,7 +41,7 @@ router.delete(
  * this takes the user to State of creatin a note
  */
 router.get("/dashboard/add", isLoggedIn, dashboardController.dasbboardAddNote);
-module.exports = router;
+// module.exports = router;
 
 /**
  * Dashboard Routes and type of request, "POST"
