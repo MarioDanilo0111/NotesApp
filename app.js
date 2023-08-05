@@ -1,5 +1,9 @@
 require("dotenv").config();
 
+/* serverless for Netlify */
+const serverless = require("serverless-http");
+module.exports.handler(app);
+
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 
@@ -65,6 +69,9 @@ app.use("/", require("./server/routes/index"));
 
 /* dashBoard */
 app.use("/", require("./server/routes/dashboard"));
+
+/* use Netlify */
+app.use("/.netlify/functions/api, router");
 
 /* Handle the 404 page(this need's to be the last Route) */
 app.get("*", function (req, res) {
