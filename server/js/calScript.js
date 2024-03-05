@@ -37,26 +37,9 @@ const months = [
   "Dec",
 ];
 
-// const eventsArr = [
-//   {
-//     day: 13,
-//     month: 11,
-//     year: 2022,
-//     events: [
-//       {
-//         title: "Event 1 lorem ipsun dolar sit genfa tersd dsad ",
-//         time: "10:00 AM",
-//       },
-//       {
-//         title: "Event 2",
-//         time: "11:00 AM",
-//       },
-//     ],
-//   },
-// ];
-
 const eventsArr = [];
 getEvents();
+/* here are the events on the Console */
 console.log(eventsArr);
 
 //function to add days in days with class day and prev-date next-date on previous month and next month days and active on today
@@ -289,26 +272,6 @@ addEventTitle.addEventListener("input", (e) => {
   addEventTitle.value = addEventTitle.value.slice(0, 60);
 });
 
-/*function defineProperty() {
-  var osccred = document.createElement("div");
-  osccred.innerHTML =
-    "<a href='https://www.youtube.com/channel/UCiUtBDVaSmMGKxg1HYeK-BQ' target=_blank></a>";
-  osccred.style.position = "absolute";
-  osccred.style.bottom = "0";
-  osccred.style.right = "0";
-  osccred.style.fontSize = "10px";
-  osccred.style.color = "transparent";
-  osccred.style.fontFamily = "sans-serif"; 
-  osccred.style.padding = "5px";
-  osccred.style.background = "transparent";
-  osccred.style.borderTopLeftRadius = "5px";
-  osccred.style.borderBottomRightRadius = "5px";
-  osccred.style.boxShadow = "0 0 5px transparent";
- document.body.appendChild(osccred);
-}*/
-
-// defineProperty();
-
 //allow only time in eventtime from and to
 addEventFrom.addEventListener("input", (e) => {
   addEventFrom.value = addEventFrom.value.replace(/[^0-9:]/g, "");
@@ -475,3 +438,27 @@ function convertTime(time) {
   time = timeHour + ":" + timeMin + " " + timeFormat;
   return time;
 }
+
+/* The code stores the events added in the User Interface (UI) by using an array called eventsArr. This array is initially empty and gets populated as events are added.
+
+When a user adds an event, the event details such as the title, start time, and end time are collected from the UI inputs. Then, a new event object is created with the following structure: 
+
+{
+  day: activeDay,
+  month: month + 1,
+  year: year,
+  events: [newEvent]
+}
+
+* 'activeDay' represents the day on which the event is added.
+* 'month + 1' represents the month (adjusted by adding 1 since JavaScript months are zero-based).
+* 'year' represents the year.
+* 'events' is an array that stores the actual event objects. Each event object has a title and time.
+
+The new event object is then added to the 'eventsArr' array. If there are already events added for the same day, month, and year, the new event is appended to the existing events array for that specific day. If no events exist for that day, a new entry is created in the 'eventsArr' array.
+
+The 'eventsArr' array is updated every time an event is added, modified, or deleted. The array is also saved to the local storage using the 'localStorage.setItem()' method, so that the events persist even if the page is refreshed or reopened. The events are retrieved from local storage using the 'localStorage.getItem()' method when the page loads initially.
+
+Overall, the 'eventsArr' array serves as a data structure to store and manage the events added in the UI, allowing for easy retrieval, modification, and persistence of events.
+
+*/
